@@ -1,11 +1,17 @@
 # frozen_string_literal: true
 
 RSpec.describe KoronaPay do
-  it "has a version number" do
-    expect(KoronaPay::VERSION).not_to be nil
-  end
+  describe '#exchange_rate' do
+    subject { described_class.exchange_rate(from, to) }
 
-  it "does something useful" do
-    expect(false).to eq(true)
+    let(:from) { 'RUS' }
+    let(:to) { 'GEO' }
+
+    it 'get exchange rate from KoronaPay' do
+      VCR.use_cassette('exchange_rate') do
+        expect(subject).not_to be_nil
+        expect(subject).to match Float(35.1186)
+      end
+    end
   end
 end
