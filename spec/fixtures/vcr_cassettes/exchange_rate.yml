@@ -1,0 +1,43 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://koronapay.com/transfers/online/api/transfers/tariffs?paymentMethod=debitCard&receivingAmount=100&receivingCountryId=GEO&receivingCurrencyId=981&receivingMethod=cash&sendingCountryId=RUS&sendingCurrencyId=810
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.7.9
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '475'
+      cache-control:
+      - private, no-cache, no-store, must-revalidate
+      expires:
+      - "-1"
+      pragma:
+      - no-cache
+      date:
+      - Tue, 04 Jul 2023 13:02:56 GMT
+      samesite:
+      - None
+      set-cookie:
+      - ROUTEID=2b6828adbefbb2eb|ZKQYg; path=/
+      strict-transport-security:
+      - max-age=16000000
+      x-content-type-options:
+      - nosniff
+    body:
+      encoding: UTF-8
+      string: '[{"sendingCurrency":{"id":"810","code":"RUB","name":"Российский рубль"},"sendingAmount":3512,"sendingAmountDiscount":0,"sendingAmountWithoutCommission":3512,"sendingCommission":0,"sendingCommissionDiscount":0,"sendingTransferCommission":0,"paidNotificationCommission":0,"receivingCurrency":{"id":"981","code":"GEL","name":"Лари"},"receivingAmount":100,"exchangeRate":35.1186,"exchangeRateType":"direct","exchangeRateDiscount":0,"profit":0,"properties":{}}]'
+  recorded_at: Tue, 04 Jul 2023 13:02:56 GMT
+recorded_with: VCR 6.2.0

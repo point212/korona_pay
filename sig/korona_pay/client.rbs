@@ -1,0 +1,5 @@
+module KoronaPay
+  module Client
+    def tariffs: -> untyped
+  end
+end
